@@ -9,24 +9,27 @@ namespace LinqMock.Maps
     public class BaseLinqMap : ILinqMap
     {
         // TODO: Better long-term caching strategy
-        private readonly Dictionary<string, Delegate> replacements = new Dictionary<string, Delegate>();
-        private readonly Dictionary<MethodInfo, Delegate> readCache = new Dictionary<MethodInfo, Delegate>();
+        private readonly Dictionary<string, Delegate> replacementMap = new Dictionary<string, Delegate>();
+        private readonly Dictionary<MethodInfo, Delegate> replacementCache = new Dictionary<MethodInfo, Delegate>();
 
-        protected void Add(string methodName, Delegate replacement)
+        protected void Add(string methodName, params Delegate[] replacements)
         {
-            var methodSignature = replacement.Method.CopySignature(methodName);
-            replacements.Add(methodSignature, replacement);
+            foreach (var replacement in replacements)
+            {
+                var methodSignature = replacement.Method.CopySignature(methodName);
+                replacementMap.Add(methodSignature, replacement);
+            }
         }
 
         public Delegate GetReplacement(MethodInfo methodInfo)
         {
             Delegate replacement;
-            if (readCache.TryGetValue(methodInfo, out replacement))
+            if (replacementCache.TryGetValue(methodInfo, out replacement))
                 return replacement;
 
             var methodSignature = methodInfo.GetSignature();
-            replacements.TryGetValue(methodSignature, out replacement);
-            readCache[methodInfo] = replacement;
+            replacementMap.TryGetValue(methodSignature, out replacement);
+            replacementCache[methodInfo] = replacement;
 
             return replacement;
         }

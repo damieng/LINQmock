@@ -37,7 +37,8 @@
     <Compile Include="Maps\BaseLinqMap.cs" />
     <Compile Include="Maps\ILinqMap.cs" />
     <Compile Include="Maps\LinqToSqlMap.cs" />
-    <Compile Include="Operations\DateOperations.cs" />
+    <Compile Include="Operations\DateTimeOffsetOperations.cs" />
+    <Compile Include="Operations\DateTimeOperations.cs" />
     <Compile Include="ReflectionHelpers.cs" />
     <Compile Include="RemapExtensions.cs" />
     <Compile Include="Operations\StringOperations.cs" />

@@ -12,8 +12,6 @@ namespace TestBench
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(DateOperations.DateDiffHour(new DateTime(2011,01,03,10,59,59), new DateTime(2011,01,03,11,00,00)));
-
             var source = new List<Robot> {
                 new Robot { Name = "Kryten" },
                 new Robot { Name = "Abobo" }

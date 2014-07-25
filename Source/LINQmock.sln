@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqMock", "LINQmock\LinqMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBench", "TestBench\TestBench.csproj", "{6635906A-5B47-41E7-A745-A6CE88901CBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqMock.Tests", "LinqMock.Tests\LinqMock.Tests.csproj", "{1F3A1B74-C56E-48BC-874E-D67DA217A48D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6635906A-5B47-41E7-A745-A6CE88901CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6635906A-5B47-41E7-A745-A6CE88901CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6635906A-5B47-41E7-A745-A6CE88901CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3A1B74-C56E-48BC-874E-D67DA217A48D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3A1B74-C56E-48BC-874E-D67DA217A48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3A1B74-C56E-48BC-874E-D67DA217A48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3A1B74-C56E-48BC-874E-D67DA217A48D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
