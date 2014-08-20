@@ -1,6 +1,7 @@
 ﻿// Licensed under the Apache 2.0 License. See LICENSE.txt in the project root for more information.
 
 using System.Collections.Generic;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace LinqMock.Operations
@@ -8,6 +9,30 @@ namespace LinqMock.Operations
     public static class StringOperations
     {
         private static readonly Dictionary<string, Regex> likeCache = new Dictionary<string, Regex>();
+
+        public static int? Ascii(string arg)
+        {
+            if (string.IsNullOrEmpty(arg))
+                return null;
+
+            return (byte)arg[0];
+        }
+            
+        public static int? CharIndex(string toSearch, string target, int? startLocation = 0)
+        {
+            if (toSearch == null || target == null)
+                return null;
+
+            return target.IndexOf(toSearch, startLocation.Value) + 1;
+        }
+
+        public static string Char(int? arg)
+        {
+            if (arg == null || arg < 0 || arg > 255)
+                return null;
+
+            return ((char)arg.Value).ToString();
+        }
 
         public static bool SqlLike(string matchExpression, string likePattern, char escape)
         {
